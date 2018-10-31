@@ -1,5 +1,14 @@
 # Página local Vtex_EV
 
+# Instalação
+
+npm i
+
+Para executar digite gulp dev
+
+Bootstrap 4 como grid
+
+
 #Variáveis sass fonts Roboto LC
 
 $lc_black: 'lc_black',
