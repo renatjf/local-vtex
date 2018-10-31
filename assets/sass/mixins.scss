@@ -32,17 +32,10 @@ select:focus {
 #header {
   iframe {
     width: 100%;
-    height: 130px;
+    height: rem(130);
     overflow: hidden;
-    @media only screen and (max-width: 320px) {
-      height: 100px;
+    @media only screen and (max-width: rem(320)) {
+      height: rem(100);
     }
-  }
-}
-
-#footer {
-  iframe {
-    width: 100%;
-    height: 133px;
   }
 }
