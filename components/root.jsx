@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 // header
-$('#header').load('../pagina/header.html');
+$('#header').load('header.html');
 
 //conteudo
-$('#conteudo').load('../pagina/conteudo.html');
+$('#conteudo').load('conteudo.html');

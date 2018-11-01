@@ -21,7 +21,7 @@ module.exports = {
         ]
     },
     output: {
-        path: __dirname + "/pagina/",
+        path: __dirname + "/",
         filename: "./root.bundle.js",
         _filename: "./script.bundle.js"
     },

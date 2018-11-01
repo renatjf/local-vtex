@@ -17,34 +17,34 @@ gulp.task('sass', function () {
     .pipe(sass({
       outputStyle: 'compressed'
     }))
-    .pipe(gulp.dest('./pagina/css'));
+    .pipe(gulp.dest('./css'));
 });
 
 
 //imagemin
-gulp.task('imagens', function () {
-  return gulp.src('./assets/imagens/**/*.{gif,jpg,png,svg}')
+gulp.task('img', function () {
+  return gulp.src('./assets/arquivos/**/*.{gif,jpg,png,svg}')
     .pipe(imagemin({
       optimizationLevel: 7,
       progressive: true,
       interlaced: true,
     }))
 
-    .pipe(gulp.dest('./pagina/imagens/'));
+    .pipe(gulp.dest('./arquivos/'));
 
 });
 
 //svg
 gulp.task('svg', function () {
-  return gulp.src('./pagina/*.html')
+  return gulp.src('*.html')
     .pipe(injectSvg())
-    .pipe(gulp.dest('./pagina/'));
+    .pipe(gulp.dest('./'));
 });
 
 
 //browser-sync
 gulp.task('browser-sync', function () {
-  browserSync.init(['./pagina/css/**', './**'], {
+  browserSync.init(['./css/**', './**'], {
     server: {
       baseDir: './',
       index: 'index.html'
@@ -56,14 +56,14 @@ gulp.task('browser-sync', function () {
 gulp.task('webpack-stream', function () {
   return gulp.src('./assets/components/script.jsx')
     .pipe(webpack(require('./webpack.config.js')))
-    .pipe(gulp.dest('./pagina/js/'))
+    .pipe(gulp.dest('./js/'))
   browserSync.reload();
 });
 
 
 //view
-gulp.task('dev', ['sass', 'webpack-stream', 'imagens', 'svg', 'browser-sync'], function () {
-  gulp.watch('./assets/imagens/**/*.{gif,jpg,png,svg}', ['imagens']);
+gulp.task('dev', ['sass', 'webpack-stream', 'img', 'svg', 'browser-sync'], function () {
+  gulp.watch('./assets/arquivos/**/*.{gif,jpg,png,svg}', ['img']);
   gulp.watch('*.html', ['svg']);
   gulp.watch('./assets/sass/**/*.scss', ['sass']);
   gulp.watch('./components/**/*.js', ['webpack-stream']);
