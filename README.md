@@ -33,6 +33,6 @@ Bootstrap 4 como grid
 # Obs:
 > Todo px se escreve rem(px)
 - exemplo: rem(18px)
-> Todo svg se escreve <img src="caminho do svg">
+> Todo svg se escreve com a tag "img e o path do mesmo"
 - o svg sofrerá uma conversão inline e o mesmo pode ser tratado pelo sass
 
