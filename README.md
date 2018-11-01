@@ -29,3 +29,10 @@ Bootstrap 4 como grid
 - $lc_regular
 - $lc_extra_light
 - $lc_extra_light_italica
+
+# Obs:
+> Todo px se escreve rem(px)
+- exemplo: rem(18px)
+> Todo svg se escreve <img src="caminho do svg">
+- o svg sofrerá uma conversão inline e o mesmo pode ser tratado pelo sass
+

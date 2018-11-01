@@ -22,25 +22,23 @@ gulp.task('sass', function () {
 
 
 //imagemin
-gulp.task('img', function () {
-  return gulp.src('./assets/img/**/*.{gif,jpg,png,svg}')
+gulp.task('imagens', function () {
+  return gulp.src('./assets/imagens/**/*.{gif,jpg,png,svg}')
     .pipe(imagemin({
       optimizationLevel: 7,
       progressive: true,
       interlaced: true,
     }))
 
-    .pipe(gulp.dest('./pagina/img/'));
+    .pipe(gulp.dest('./pagina/imagens/'));
 
 });
 
 //svg
 gulp.task('svg', function () {
-
-  return gulp.src('*.html')
+  return gulp.src('./pagina/*.html')
     .pipe(injectSvg())
-    .pipe(gulp.dest('./'));
-
+    .pipe(gulp.dest('./pagina/'));
 });
 
 
@@ -64,8 +62,8 @@ gulp.task('webpack-stream', function () {
 
 
 //view
-gulp.task('dev', ['sass', 'webpack-stream', 'img', 'svg', 'browser-sync'], function () {
-  gulp.watch('./assets/img/**/*.{gif,jpg,png,svg}', ['img']);
+gulp.task('dev', ['sass', 'webpack-stream', 'imagens', 'svg', 'browser-sync'], function () {
+  gulp.watch('./assets/imagens/**/*.{gif,jpg,png,svg}', ['imagens']);
   gulp.watch('*.html', ['svg']);
   gulp.watch('./assets/sass/**/*.scss', ['sass']);
   gulp.watch('./components/**/*.js', ['webpack-stream']);
