@@ -4,3 +4,27 @@
 @import "./_variables";
 
 //style da sua pagina aqui em baixo
+
+.form-evento {
+  margin-top: rem(30);
+
+  .header-evento-texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .titulo {
+      text-align: center;
+      color: $color__preto;
+      text-transform: uppercase;
+      font-size: rem(30);
+      font-family: $lc_light;
+      margin: rem(10);
+
+      p {
+        font-size: rem(50);
+        color: $color__laranja;
+      }
+    }
+  }
+}

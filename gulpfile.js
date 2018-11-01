@@ -22,15 +22,15 @@ gulp.task('sass', function () {
 
 
 //imagemin
-gulp.task('imagens', function () {
-  return gulp.src('./assets/imagens/**/*.{gif,jpg,png,svg}')
+gulp.task('img', function () {
+  return gulp.src('./assets/arquivos/**/*.{gif,jpg,png,svg}')
     .pipe(imagemin({
       optimizationLevel: 7,
       progressive: true,
       interlaced: true,
     }))
 
-    .pipe(gulp.dest('./pagina/imagens/'));
+    .pipe(gulp.dest('./pagina/arquivos/'));
 
 });
 
@@ -62,8 +62,8 @@ gulp.task('webpack-stream', function () {
 
 
 //view
-gulp.task('dev', ['sass', 'webpack-stream', 'imagens', 'svg', 'browser-sync'], function () {
-  gulp.watch('./assets/imagens/**/*.{gif,jpg,png,svg}', ['imagens']);
+gulp.task('dev', ['sass', 'webpack-stream', 'img', 'svg', 'browser-sync'], function () {
+  gulp.watch('./assets/arquivos/**/*.{gif,jpg,png,svg}', ['img']);
   gulp.watch('*.html', ['svg']);
   gulp.watch('./assets/sass/**/*.scss', ['sass']);
   gulp.watch('./components/**/*.js', ['webpack-stream']);
